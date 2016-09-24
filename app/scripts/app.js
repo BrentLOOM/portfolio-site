@@ -19,7 +19,7 @@ angular
 	'ui.router'
   ])
 	
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
 		.state('app', {
 		url:'/',
@@ -61,6 +61,9 @@ angular
 	});
 	
 	$urlRouterProvider.otherwise('/');
+	
+	// Use the HTML 5 History API
+	$locationProvider.html5Mode(true);
 
   })
 
