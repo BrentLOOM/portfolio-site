@@ -15,21 +15,53 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+	'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+	
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
+		.state('app', {
+		url:'/',
+		views: {
+			'header': {
+				templateUrl : 'views/header.html',
+			},
+			'content': {
+				templateUrl : 'views/main.html',
+				controller  : 'MainCtrl',
+				controllerAs: 'main'
+			},
+			'footer': {
+				templateUrl : 'views/footer.html',
+			}
+		}
+	})
+	
+	.state('app.about', {
+		url: 'about',
+		views: {
+			'content@': {
+				templateUrl: 'views/about.html',
+				controller: 'AboutCtrl',
+				controllerAs: 'about'
+			}
+		}
+	})
+	
+	.state('app.contact', {
+		url: 'contact',
+		views: {
+			'content@': {
+				templateUrl: 'views/main.html',
+				controller: 'MainCtrl',
+				controllerAs: 'main'
+			}
+		}
+	});
+	
+	$urlRouterProvider.otherwise('/');
+
+  })
+
+;
