@@ -109,7 +109,7 @@ angular
 	$urlRouterProvider.otherwise('/');
 	
 	// Use the HTML 5 History API
-	$locationProvider.html5Mode(true);
+	//$locationProvider.html5Mode(true);
 
   })
 
