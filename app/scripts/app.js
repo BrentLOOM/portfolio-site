@@ -53,12 +53,58 @@ angular
 		url: 'contact',
 		views: {
 			'content@': {
-				templateUrl: 'views/main.html',
-				controller: 'MainCtrl',
-				controllerAs: 'main'
+				templateUrl: 'views/contact.html',
+				controller: 'ContactCtrl',
+				controllerAs: 'contact'
 			}
 		}
-	});
+	})
+	
+	.state('app.games', {
+		url: 'games',
+		views: {
+			'content@': {
+				templateUrl: 'views/games.html',
+				controller: 'GamesCtrl',
+				controllerAs: 'games'
+			}
+		}
+	})
+	
+	.state('app.models', {
+		url: 'models',
+		views: {
+			'content@': {
+				templateUrl: 'views/models.html',
+				controller: 'ModelsCtrl',
+				controllerAs: 'models'
+			}
+		}
+	})
+	
+	.state('app.anim', {
+		url: 'anim',
+		views: {
+			'content@': {
+				templateUrl: 'views/anim.html',
+				controller: 'AnimCtrl',
+				controllerAs: 'anim'
+			}
+		}
+	})
+	
+	.state('app.3d', {
+		url: '3d',
+		views: {
+			'content@': {
+				templateUrl: 'views/3d.html',
+				controller: '3dCtrl',
+				controllerAs: '3d'
+			}
+		}
+	})
+	
+	;
 	
 	$urlRouterProvider.otherwise('/');
 	
