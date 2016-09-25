@@ -21,11 +21,11 @@ angular
 	
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
-		.state('app', {
+	.state('app', {
 		url:'/',
 		views: {
 			'header': {
-				templateUrl : 'views/header.html',
+				templateUrl : 'views/header.html'
 			},
 			'content': {
 				templateUrl : 'views/main.html',
@@ -33,7 +33,7 @@ angular
 				controllerAs: 'main'
 			},
 			'footer': {
-				templateUrl : 'views/footer.html',
+				templateUrl : 'views/footer.html'
 			}
 		}
 	})
