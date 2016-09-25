@@ -104,6 +104,39 @@ angular
 		}
 	})
 	
+	.state('app.pacific-armada', {
+		url: 'Pacific-Armada',
+		views: {
+			'content@': {
+				templateUrl: 'views/game.html',
+				controller: 'GameCtrl',
+				controllerAs: 'game'
+			}
+		}
+	})
+	
+	.state('app.stage', {
+		url: 'Stage',
+		views: {
+			'content@': {
+				templateUrl: 'views/game.html',
+				controller: 'GameCtrl',
+				controllerAs: 'game'
+			}
+		}
+	})
+	
+	.state('app.pacific-armada-redux', {
+		url: 'Pacific-Armada-Redux',
+		views: {
+			'content@': {
+				templateUrl: 'views/game.html',
+				controller: 'GameCtrl',
+				controllerAs: 'game'
+			}
+		}
+	})
+	
 	;
 	
 	$urlRouterProvider.otherwise('/');

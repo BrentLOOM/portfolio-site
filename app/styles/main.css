@@ -32,6 +32,9 @@ body {
 
 /* Custom page footer */
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
@@ -83,6 +86,6 @@ body {
 }
 
 /* Enable dropdown on hover */
-.dropdown:hover .dropdown-menu {
+/*.dropdown:hover .dropdown-menu {
 	display: block;
-}
+}*/
