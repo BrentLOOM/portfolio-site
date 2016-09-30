@@ -32,7 +32,7 @@ body {
 
 /* Custom page footer */
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   padding-top: 19px;
@@ -83,4 +83,35 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+	
+  .dropdown:hover .dropdown-menu {
+	display: block;
+  }
+}
+
+.navbar-brand {
+	font-size: 16px;
+    font-weight: bold;
+}
+
+.dropdown-menu .dropdown-header {
+    font-weight: bold;
+	font-variant: small-caps;
+}
+
+.thumbnail {
+    position: relative;
+}
+
+.caption {
+    position: absolute;
+    top: 55%;
+    left: 0;
+    width: 100%;
+}
+
+.caption p {
+	text-align: center;
+	font-variant: small-caps;
+	font-weight: bold;
 }

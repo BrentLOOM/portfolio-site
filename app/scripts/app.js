@@ -16,10 +16,11 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-	'ui.router'
+	'ui.router',
+	'ui.bootstrap'
   ])
 	
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
 	.state('app', {
 		url:'/',
