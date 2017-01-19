@@ -343,7 +343,7 @@ module.exports = function (grunt) {
         options: {
           module: 'app',
           htmlmin: '<%= htmlmin.dist.options %>',
-          usemin: 'scripts/scripts.js'
+          usemin: 'scripts.js'
         },
         cwd: '<%= yeoman.app %>',
         src: '{,*/}*.html',
