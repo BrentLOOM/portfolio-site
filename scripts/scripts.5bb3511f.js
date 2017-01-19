@@ -215,13 +215,13 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 	$scope.engineCredit = function(engine){
 		switch(engine){
 			case 'Unity':
-				return 'images/mwu-logo-rgb.6f7045a5.png';
+				return 'images/mwu-logo-rgb.png';
 				break;
 			case 'Unreal Engine':
-				return 'images/Unreal_Engine_Horiz_Black.559b062c.png';
+				return 'images/Unreal_Engine_Horiz_Black.png';
 				break;
 			default:
-				return 'images/mwu-logo-rgb.6f7045a5.png';
+				return 'images/mwu-logo-rgb.png';
 				break;
 		}	
 	};
