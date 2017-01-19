@@ -1,0 +1,15 @@
+<div class="jumbotron game-cover">
+	<div class="container">
+		<p class="lead">
+			<img class="engine-credit" ng-src="{{engineCredit(game.engine)}}" alt="Made With {{game.engine}}"><br><br>
+			<h1>{{game.title}} <small>({{game.year}})</small></h1>
+			<h3>
+				<span ng-repeat="platform in game.platforms"><span class="label" ng-class="platformLabel(platform)" aria-label="{{platform}}">{{platform}} <i class="fa" aria-hidden="true" ng-class="platformIcon(platform)"></i></span> </span>
+			</h3>
+		</p>
+	</div>
+</div>
+
+<div class="container">
+	
+</div>

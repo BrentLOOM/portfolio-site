@@ -1,0 +1,21 @@
+<div class="jumbotron">
+	<h1>Hello!</h1>
+	<p class="lead">
+		<img src="images/thumbnail.jpg" class="img-circle" alt="I'm Brent"><br><br>
+		I'm Brent and I make games!
+	</p>
+	<p><a class="btn btn-lg btn-success" ui-sref="app.about">Just who is this guy?</a></p>
+</div>
+
+<div class="container">
+	<div class="row" ng-repeat="cat in categories">
+		<div class="col-xs-12 col-md-3">
+			<p>{{cat.title}}</p>
+		</div>
+		<div class="col-xs-12 col-md-9">
+			<div ng-repeat="item in cat.content">
+				<p>Item!</p>
+			</div>
+		</div>
+	</div>
+</div>
