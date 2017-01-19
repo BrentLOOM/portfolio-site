@@ -18,6 +18,7 @@ angular.module('app', [
 	'ngTouch',
 
 	'ui.router',
+	'ui.bootstrap',
 
 	'app.about',
 	'app.animation',
@@ -36,7 +37,8 @@ angular.module('app', [
 			url: '/',
 			views: {
 				'header': {
-					templateUrl: 'navigation/views/header.html'
+					templateUrl: 'navigation/views/header.html',
+					controller: 'NavCtrl'
 				},
 				'footer': {
 					templateUrl: 'navigation/views/footer.html'
