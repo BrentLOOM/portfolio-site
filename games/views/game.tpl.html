@@ -11,5 +11,27 @@
 </div>
 
 <div class="container">
+	<div class="row">
+		<h3><strong>Roles: </strong></h3><span ng-repeat="role in game.roles"><span class="badge">{{role}}</span> </span>
+	</div>
 	
+	<div class="row" ng-if="game.collaborators.length">
+		<p>
+			<h3><strong>Collaborators:</strong></h3>
+			<ul>
+				<li ng-repeat="person in game.collaborators">
+					<span ng-if="!person.url.length">{{person.name}}</span>
+					<a ng-if="person.url.length" target="_blank" ng-href="{{person.url}}">
+						{{person.name}} <i class="fa fa-external-link"></i>
+					</a>
+					<span ng-if="person.roles.length" ng-repeat="role in person.roles"><span class="badge">{{role}}</span> </span>
+				</li>
+			</ul>
+		</p>
+	</div>
+	
+	<div class="row">
+		<h3><strong>Description</strong></h3>
+		<p>{{game.description}}</p>
+	</div>
 </div>
