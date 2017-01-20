@@ -1,4 +1,4 @@
-<div class="jumbotron game-cover">
+<div class="jumbotron" ng-parallax pattern="game.bgUrl" speed="-9">
 	<div class="container">
 		<p class="lead">
 			<img class="engine-credit" ng-src="{{engineCredit(game.engine)}}" alt="Made With {{game.engine}}"><br><br>
@@ -15,8 +15,8 @@
 	</div>
 </div>
 
-<div class="container text-center">
-	<div class="row">
+<div class="container">
+	<div class="row text-center">
 		<div ng-class="{'col-xs-12 col-md-6': game.collaborators.length, 'col-xs-12': !game.collaborators.length}">
 			<div class="row">
 				<h3><strong>Roles: </strong></h3><span ng-repeat="role in game.roles"><span class="badge">{{role}}</span> </span>
@@ -51,8 +51,8 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<hr>
-			<h2><strong>Description</strong></h2>
-			<p>{{game.description}}</p>
+			<h2 class="text-center"><strong>Description</strong></h2>
+			<div ng-include="'games/descriptions/' + game.title + '.html'"></div>
 		</div>
 	</div>
 </div>

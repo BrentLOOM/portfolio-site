@@ -45,8 +45,8 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
-				description: "Seed is a game.",
-				albumUrl: ""
+				albumUrl: "",
+				bgUrl: "/images/seed-temp.JPG"
 			}
 		}
 	})
@@ -93,8 +93,8 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
-				description: "Pacific Armada is a game.",
-				albumUrl: ""
+				albumUrl: "",
+				bgUrl: "/images/PA-bg.jpg"
 			}
 		}
 	})
@@ -142,8 +142,8 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
-				description: "Wonderland is a tech demo showcasing skills in Unreal Engine, including level design, Blueprints, C++ programming, and Matinee.",
-				albumUrl: ""
+				albumUrl: "",
+				bgUrl: ""
 			}
 		}
 	})
@@ -200,8 +200,9 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
-				description: "MessageCraft is a cool game.",
-				albumUrl: ""
+				descPath: "MessageCraft is a cool game.",
+				albumUrl: "",
+				bgUrl: ""
 			}
 		}
 	})

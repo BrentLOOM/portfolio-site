@@ -56,4 +56,25 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 				return '';
 		}
 	};
+	
+	$scope.bg = {
+		'background-image':'url(' + $scope.game.bgUrl + ') no-repeat center center', 
+  		'position': 'fixed',
+  		'width': '100%',
+  		'height': '350px', 
+  		'top': '0',
+  		'left': '0',
+		'z-index': '-1'
+	};
+	
+	$scope.jumbotronStyle = {
+		'margin-bottom': '0px',
+		'height': '350px',
+		//'color': 'white',
+		//'text-shadow': 'black 0.3em 0.3em 0.3em',
+		'background': 'transparent'
+	};
+	
+	
+
 });

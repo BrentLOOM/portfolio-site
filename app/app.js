@@ -19,12 +19,14 @@ angular.module('app', [
 
 	'ui.router',
 	'ui.bootstrap',
+	'ngParallax',
 
 	'app.about',
 	'app.animation',
 	'app.games',
 	'app.home',
 	'app.models',
+	'app.resume',
 	'app.sites'
 ])
 
