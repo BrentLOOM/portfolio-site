@@ -15,16 +15,12 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 		switch(engine){
 			case 'Unity':
 				return 'images/mwu-logo-rgb.png';
-				break;
 			case 'Unreal Engine':
 				return 'images/Unreal_Engine_Horiz_Black.png';
-				break;
 			case 'AngularJS':
 				return 'images/AngularJS-large.png';
-				break;
 			default:
 				return 'images/mwu-logo-rgb.png';
-				break;
 		}	
 	};
 	
@@ -33,19 +29,15 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 		switch(platform){
 			case 'Android':
 				return 'label-success';
-				break;
 			case 'OSX':
 			case 'iOS':
 				return 'label-info';
-				break;
 			case 'PC':
 				return 'label-default';
-				break;
 			case 'Web':
 				return 'label-primary';
 			default:
 				return 'label-danger';
-				break;
 		}
 	};
 	
@@ -53,20 +45,15 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 		switch(platform){
 			case 'Android':
 				return 'fa-android';
-				break;
 			case 'OSX':
 			case 'iOS':
 				return 'fa-apple';
-				break;
 			case 'PC':
 				return 'fa-windows';
-				break;
 			case 'Web':
 				return 'fa-globe';
-				break;
 			default:
 				return '';
-				break;
 		}
 	};
 });

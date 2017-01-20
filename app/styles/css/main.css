@@ -80,6 +80,11 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+
+	.dev-credit {
+		padding-top: 5px;
+		padding-bottom: 10px;
+	}
 }
 
 .engine-credit {
@@ -92,10 +97,6 @@ body {
 	background-size: cover;
 }
 
-.dev-credit {
-	padding-top: 5px;
-	padding-bottom: 10px;
-}
 
 .content-ui-view {
 	padding-top: 20px;

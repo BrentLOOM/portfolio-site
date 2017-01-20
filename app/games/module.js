@@ -41,7 +41,8 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				collaborators: [
 					
 				],
-				affliations: [
+				affiliations: [
+					'Digital Worlds Institute',
 					'University of Florida'
 				],
 				description: "Seed is a game.",
@@ -88,10 +89,11 @@ angular.module('app.games', []).config(function ($stateProvider) {
 						]
 					}
 				],
-				affliations: [
+				affiliations: [
+					'Digital Worlds Institute',
 					'University of Florida'
 				],
-				description: "",
+				description: "Pacific Armada is a game.",
 				albumUrl: ""
 			}
 		}
@@ -132,14 +134,15 @@ angular.module('app.games', []).config(function ($stateProvider) {
 						name: 'Absinthe Wu',
 						url: 'http://absinthe-wu.com',
 						roles: [
-							
+							'Artist'
 						]
 					}
 				],
-				affliations: [
+				affiliations: [
+					'Digital Worlds Institute',
 					'University of Florida'
 				],
-				description: "",
+				description: "Wonderland is a tech demo showcasing skills in Unreal Engine, including level design, Blueprints, C++ programming, and Matinee.",
 				albumUrl: ""
 			}
 		}
@@ -193,7 +196,8 @@ angular.module('app.games', []).config(function ($stateProvider) {
 						]
 					}
 				],
-				affliations: [
+				affiliations: [
+					'Digital Worlds Institute',
 					'University of Florida'
 				],
 				description: "MessageCraft is a cool game.",
