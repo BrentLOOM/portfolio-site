@@ -9,7 +9,8 @@
  */
 angular.module('app').controller('NavCtrl', function ($scope) {
 	
-	$scope.collapsed = true;
+	$scope.navbarCollapsed = true;
+	$scope.footerCollapsed = true;
 	
 	
 	

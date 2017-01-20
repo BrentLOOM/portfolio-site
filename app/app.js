@@ -41,7 +41,8 @@ angular.module('app', [
 					controller: 'NavCtrl'
 				},
 				'footer': {
-					templateUrl: 'navigation/views/footer.html'
+					templateUrl: 'navigation/views/footer.html',
+					controller: 'NavCtrl'
 				}
 			}
 				
