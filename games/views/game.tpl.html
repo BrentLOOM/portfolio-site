@@ -6,32 +6,53 @@
 			<h3>
 				<span ng-repeat="platform in game.platforms"><span class="label" ng-class="platformLabel(platform)" aria-label="{{platform}}">{{platform}} <i class="fa" aria-hidden="true" ng-class="platformIcon(platform)"></i></span> </span>
 			</h3>
+			
+			
 		</p>
+		<span ng-repeat="aff in game.affiliations" ng-if="game.affiliations.length">
+			<small class="text-muted">{{aff}}<span ng-if="!$last">, </span></small>
+		</span>
 	</div>
 </div>
 
-<div class="container">
+<div class="container text-center">
 	<div class="row">
-		<h3><strong>Roles: </strong></h3><span ng-repeat="role in game.roles"><span class="badge">{{role}}</span> </span>
-	</div>
-	
-	<div class="row" ng-if="game.collaborators.length">
-		<p>
-			<h3><strong>Collaborators:</strong></h3>
-			<ul>
-				<li ng-repeat="person in game.collaborators">
+		<div ng-class="{'col-xs-12 col-md-6': game.collaborators.length, 'col-xs-12': !game.collaborators.length}">
+			<div class="row">
+				<h3><strong>Roles: </strong></h3><span ng-repeat="role in game.roles"><span class="badge">{{role}}</span> </span>
+				
+			</div>
+			<div class="row" ng-if="game.skills.programming">
+				<h3><strong>Programming Skills: </strong></h3>
+				<li ng-repeat="skill in game.skills.programming" style="list-style-type:none; display: inline;"> <span class="badge">{{skill}}</span></li>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-6" ng-if="game.collaborators.length">
+			<p>
+				<h3><strong>Collaborators:</strong></h3>
+				<li ng-repeat="person in game.collaborators" style="list-style-type:none;">
 					<span ng-if="!person.url.length">{{person.name}}</span>
 					<a ng-if="person.url.length" target="_blank" ng-href="{{person.url}}">
-						{{person.name}} <i class="fa fa-external-link"></i>
-					</a>
+						{{person.name}} <i class="fa fa-external-link"></i></a><br>
 					<span ng-if="person.roles.length" ng-repeat="role in person.roles"><span class="badge">{{role}}</span> </span>
+					<br>
+					<br>
 				</li>
-			</ul>
-		</p>
+			</p>
+		</div>
+	</div>
+
+	<div class="row" ng-if="game.albumUrl.length">
+		<hr>
+		<div class="col-xs-12">
+		</div>
 	</div>
 	
 	<div class="row">
-		<h3><strong>Description</strong></h3>
-		<p>{{game.description}}</p>
+		<div class="col-xs-12">
+			<hr>
+			<h2><strong>Description</strong></h2>
+			<p>{{game.description}}</p>
+		</div>
 	</div>
 </div>

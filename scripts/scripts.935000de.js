@@ -18,6 +18,7 @@ angular.module('app', [
 	'ngTouch',
 
 	'ui.router',
+	'ui.bootstrap',
 
 	'app.about',
 	'app.animation',
@@ -36,10 +37,12 @@ angular.module('app', [
 			url: '/',
 			views: {
 				'header': {
-					templateUrl: 'navigation/views/header.html'
+					templateUrl: 'navigation/views/header.html',
+					controller: 'NavCtrl'
 				},
 				'footer': {
-					templateUrl: 'navigation/views/footer.html'
+					templateUrl: 'navigation/views/footer.html',
+					controller: 'NavCtrl'
 				}
 			}
 				
@@ -48,6 +51,24 @@ angular.module('app', [
 	$urlRouterProvider.otherwise('/home');
 	//$locationProvider.html5Mode(true);
 });
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name app.controller:NavCtrl
+ * @description
+ * # NavCtrl
+ * Controller of the app
+ */
+angular.module('app').controller('NavCtrl', function ($scope) {
+	
+	$scope.navbarCollapsed = true;
+	$scope.footerCollapsed = true;
+	
+	
+	
+});
+
 "use strict";
 
 angular.module('app.about', []).config(function ($stateProvider) {
@@ -188,7 +209,8 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				collaborators: [
 					
 				],
-				affliations: [
+				affiliations: [
+					'Digital Worlds Institute',
 					'University of Florida'
 				],
 				description: "Seed is a game.",
@@ -235,10 +257,11 @@ angular.module('app.games', []).config(function ($stateProvider) {
 						]
 					}
 				],
-				affliations: [
+				affiliations: [
+					'Digital Worlds Institute',
 					'University of Florida'
 				],
-				description: "",
+				description: "Pacific Armada is a game.",
 				albumUrl: ""
 			}
 		}
@@ -279,14 +302,15 @@ angular.module('app.games', []).config(function ($stateProvider) {
 						name: 'Absinthe Wu',
 						url: 'http://absinthe-wu.com',
 						roles: [
-							
+							'Artist'
 						]
 					}
 				],
-				affliations: [
+				affiliations: [
+					'Digital Worlds Institute',
 					'University of Florida'
 				],
-				description: "",
+				description: "Wonderland is a tech demo showcasing skills in Unreal Engine, including level design, Blueprints, C++ programming, and Matinee.",
 				albumUrl: ""
 			}
 		}
@@ -340,7 +364,8 @@ angular.module('app.games', []).config(function ($stateProvider) {
 						]
 					}
 				],
-				affliations: [
+				affiliations: [
+					'Digital Worlds Institute',
 					'University of Florida'
 				],
 				description: "MessageCraft is a cool game.",
@@ -367,16 +392,12 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 		switch(engine){
 			case 'Unity':
 				return 'images/mwu-logo-rgb.png';
-				break;
 			case 'Unreal Engine':
 				return 'images/Unreal_Engine_Horiz_Black.png';
-				break;
 			case 'AngularJS':
 				return 'images/AngularJS-large.png';
-				break;
 			default:
 				return 'images/mwu-logo-rgb.png';
-				break;
 		}	
 	};
 	
@@ -385,19 +406,15 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 		switch(platform){
 			case 'Android':
 				return 'label-success';
-				break;
 			case 'OSX':
 			case 'iOS':
 				return 'label-info';
-				break;
 			case 'PC':
 				return 'label-default';
-				break;
 			case 'Web':
 				return 'label-primary';
 			default:
 				return 'label-danger';
-				break;
 		}
 	};
 	
@@ -405,20 +422,15 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 		switch(platform){
 			case 'Android':
 				return 'fa-android';
-				break;
 			case 'OSX':
 			case 'iOS':
 				return 'fa-apple';
-				break;
 			case 'PC':
 				return 'fa-windows';
-				break;
 			case 'Web':
 				return 'fa-globe';
-				break;
 			default:
 				return '';
-				break;
 		}
 	};
 });
