@@ -19,13 +19,16 @@ angular.module('app', [
 
 	'ui.router',
 	'ui.bootstrap',
+	'ngParallax',
 
 	'app.about',
 	'app.animation',
 	'app.games',
 	'app.home',
 	'app.models',
-	'app.sites'
+	'app.resume',
+	'app.sites',
+	'app.videos'
 ])
 
 .config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
@@ -152,7 +155,11 @@ angular.module('app.home').controller('MainCtrl', function ($scope) {
 		{
 			title: 'Sites',
 			content: []
-		}
+		},
+		{
+			title: 'Video Productions',
+			content: []
+		},
 	];
 });
 
@@ -163,8 +170,46 @@ angular.module('app.models', []).config(function () {
 });
 "use strict";
 
+angular.module('app.resume', []).config(function ($stateProvider) {
+	$stateProvider
+	
+	.state('app.resume', {
+		name: 'resume',
+		url: 'resume',
+		views:{
+			'content@': {
+				templateUrl: '/resume/views/resume.html',
+				controller: 'ResumeCtrl'
+			}
+		}
+	});
+});
+angular.module('app.resume').controller('ResumeCtrl', function(){
+	
+});
+"use strict";
+
 angular.module('app.sites', []).config(function () {
 
+});
+"use strict";
+
+angular.module('app.videos', []).config(function ($stateProvider) {
+	$stateProvider
+	
+	.state('app.videos', {
+		name: 'videos',
+		url: 'video-production',
+		views:{
+			'content@': {
+				templateUrl: '/videos/views/videos.html',
+				controller: 'VideoCtrl'
+			}
+		}
+	});
+});
+angular.module('app.videos').controller('VideoCtrl', function(){
+	
 });
 "use strict";
 
@@ -190,6 +235,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				title: 'Seed',
 				engine: 'Unity',
 				year: '2017',
+				tagline: "Weather the storm. Or become one.",
 				platforms: [
 					'Android',
 					'iOS'
@@ -203,8 +249,10 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					programming: [
 						'C#'
 					],
-					teamwork: false,
-					gameDesign: true
+					software: [
+						'Maya',
+						'Adobe Photoshop CS6'
+					]
 				},
 				collaborators: [
 					
@@ -213,8 +261,8 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
-				description: "Seed is a game.",
-				albumUrl: ""
+				albumUrl: "",
+				bgUrl: "/images/covers/seed-temp.JPG"
 			}
 		}
 	})
@@ -233,6 +281,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				title: 'Pacific Armada',
 				engine: 'Unity',
 				year: '2015',
+				tagline: "The ocean's not your only enemy.",
 				platforms: [
 					'PC',
 					'OSX'
@@ -245,8 +294,10 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					programming: [
 						'C#'
 					],
-					teamwork: true,
-					gameDesign: true
+					software: [
+						'Photoshop CS6',
+						'Illustrator CS6'
+					]
 				},
 				collaborators: [
 					{
@@ -261,8 +312,8 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
-				description: "Pacific Armada is a game.",
-				albumUrl: ""
+				albumUrl: "",
+				bgUrl: "/images/covers/PA-bg.jpg"
 			}
 		}
 	})
@@ -281,6 +332,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				title: 'Wonderland',
 				engine: 'Unreal Engine',
 				year: '2016',
+				tagline: "Curiouser and curiouser.",
 				platforms: [
 					'PC'
 				],
@@ -294,8 +346,10 @@ angular.module('app.games', []).config(function ($stateProvider) {
 						'C++',
 						'Blueprints'
 					],
-					teamwork: true,
-					gameDesign: true
+					software: [
+						'Maya',
+						'Photoshop CS6'
+					]
 				},
 				collaborators: [
 					{
@@ -310,8 +364,8 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
-				description: "Wonderland is a tech demo showcasing skills in Unreal Engine, including level design, Blueprints, C++ programming, and Matinee.",
-				albumUrl: ""
+				albumUrl: "",
+				bgUrl: ""
 			}
 		}
 	})
@@ -330,6 +384,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				title: 'MessageCraft',
 				engine: 'AngularJS',
 				year: '2016',
+				tagline: "Forging Meaning Behind Media Narratives.",
 				platforms: [
 					'Web'
 				],
@@ -344,8 +399,9 @@ angular.module('app.games', []).config(function ($stateProvider) {
 						'HTML',
 						'CSS'
 					],
-					teamwork: true,
-					gameDesign: true
+					software: [
+						
+					]
 				},
 				collaborators: [
 					{
@@ -368,8 +424,9 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
-				description: "MessageCraft is a cool game.",
-				albumUrl: ""
+				descPath: "MessageCraft is a cool game.",
+				albumUrl: "",
+				bgUrl: ""
 			}
 		}
 	})
@@ -433,4 +490,108 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 				return '';
 		}
 	};
+	
+	$scope.bg = {
+		'background-image':'url(' + $scope.game.bgUrl + ') no-repeat center center', 
+  		'position': 'fixed',
+  		'width': '100%',
+  		'height': '350px', 
+  		'top': '0',
+  		'left': '0',
+		'z-index': '-1'
+	};
+	
+	$scope.jumbotronStyle = {
+		'margin-bottom': '0px',
+		'height': '350px',
+		//'color': 'white',
+		//'text-shadow': 'black 0.3em 0.3em 0.3em',
+		'background': 'transparent'
+	};
+	
+	
+
 });
+'use strict';
+if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.exports === exports) {
+  module.exports = 'ngParallax';
+}
+angular.module('ngParallax',[]);
+angular.module('ngParallax').directive('ngParallax', [
+  '$timeout',
+  function ($window, $timeout) {
+    return {
+        restrict: 'AE',
+        scope:{
+          pattern: '=',
+          speed: '='
+        },
+        link: function(scope, elem, attr) {
+
+          window.mobileAndTabletcheck = function() {
+            if( navigator.userAgent.match(/Android/i)
+             || navigator.userAgent.match(/webOS/i)
+             || navigator.userAgent.match(/iPhone/i)
+             || navigator.userAgent.match(/iPad/i)
+             || navigator.userAgent.match(/iPod/i)
+             || navigator.userAgent.match(/BlackBerry/i)
+             || navigator.userAgent.match(/Windows Phone/i)
+             ){
+              return true;
+             }
+             else{
+              return false;
+            }
+          };
+			
+		  var bump = 200;
+
+          var bgObj = elem[0];
+              bgObj.style.backgroundRepeat = "inherit";
+              bgObj.style.backgroundAttachment = "fixed";
+              bgObj.style.width = "100%";
+              //bgObj.style.margin = "0 auto";
+              bgObj.style.position = "relative";
+			  //bgObj.style.verticalAlign = "bottom";
+              bgObj.style.background = "url(" + scope.pattern + ") no-repeat";
+              bgObj.style.backgroundAttachment = 'fixed';
+			  bgObj.style.backgroundPositionX = '50%';
+			  bgObj.style.backgroundPositionY = bump + '%';
+			
+		
+          var isMobile = window.mobileAndTabletcheck();
+
+
+          function execute(){
+
+              var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+              var speed = (scrollTop / scope.speed);
+              if(isMobile){
+                speed = speed * 0.10;
+              }
+              if(speed === 0){
+                bgObj.style.backgroundPositionY = ' 0%';
+              }
+              else{
+                bgObj.style.backgroundPositionY = (bump + speed) + '%';
+              }
+
+          }
+
+          // for mobile
+          window.document.addEventListener("touchmove", function(){
+              execute();
+          });
+
+          // for browsers
+          window.document.addEventListener("scroll", function() {
+              execute();
+          });
+
+          execute();
+
+        },
+
+    };
+  }
+]);
