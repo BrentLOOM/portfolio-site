@@ -59,6 +59,12 @@ body {
   margin-top: 28px;
 }
 
+
+.content-ui-view {
+	padding-top: 50px;
+	padding-bottom: 60px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -85,6 +91,16 @@ body {
 		padding-top: 5px;
 		padding-bottom: 10px;
 	}
+	
+	/* Show the dropdown menu on hover */
+	.dropdown:hover .dropdown-menu {
+		display: block;
+	}
+	
+	.content-ui-view {
+		padding-top: 20px;
+		padding-bottom: 60px;
+	}
 }
 
 .engine-credit {
@@ -93,11 +109,15 @@ body {
 	
 }
 
-.content-ui-view {
-	padding-top: 20px;
-	padding-bottom: 60px;
-}
 
 .navbar-fixed-bottom {
 	background-color: white;
+}
+.navbar-brand {
+	display: inline-block;
+}
+
+.navbar-brand span>img {
+	height:100%;
+	width: auto;
 }

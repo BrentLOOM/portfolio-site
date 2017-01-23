@@ -25,6 +25,10 @@ angular.module('app.home').controller('MainCtrl', function ($scope) {
 		{
 			title: 'Sites',
 			content: []
-		}
+		},
+		{
+			title: 'Video Productions',
+			content: []
+		},
 	];
 });

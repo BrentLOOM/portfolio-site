@@ -22,6 +22,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				title: 'Seed',
 				engine: 'Unity',
 				year: '2017',
+				tagline: "Weather the storm. Or become one.",
 				platforms: [
 					'Android',
 					'iOS'
@@ -65,6 +66,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				title: 'Pacific Armada',
 				engine: 'Unity',
 				year: '2015',
+				tagline: "The ocean's not your only enemy.",
 				platforms: [
 					'PC',
 					'OSX'
@@ -113,6 +115,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				title: 'Wonderland',
 				engine: 'Unreal Engine',
 				year: '2016',
+				tagline: "Curiouser and curiouser.",
 				platforms: [
 					'PC'
 				],
@@ -162,6 +165,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				title: 'MessageCraft',
 				engine: 'AngularJS',
 				year: '2016',
+				tagline: "Forging Meaning Behind Media Narratives.",
 				platforms: [
 					'Web'
 				],

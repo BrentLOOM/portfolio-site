@@ -1,13 +1,15 @@
-<div class="jumbotron" ng-parallax pattern="game.bgUrl" speed="-9">
+<div class="jumbotron" ng-parallax pattern="game.bgUrl" speed="10">
 	<div class="container">
 		<p class="lead">
 			<img class="engine-credit" ng-src="{{engineCredit(game.engine)}}" alt="Made With {{game.engine}}"><br><br>
-			<h1>{{game.title}} <small>({{game.year}})</small></h1>
+			<h1><strong>{{game.title}}</strong> <small>({{game.year}})</small></h1>
+			<h4 ng-if="game.tagline.length"><em>"{{game.tagline}}"</em></h4>
+			<br>
 			<h3>
 				<span ng-repeat="platform in game.platforms"><span class="label" ng-class="platformLabel(platform)" aria-label="{{platform}}">{{platform}} <i class="fa" aria-hidden="true" ng-class="platformIcon(platform)"></i></span> </span>
 			</h3>
 			
-			
+			<br>
 		</p>
 		<span ng-repeat="aff in game.affiliations" ng-if="game.affiliations.length">
 			<small class="text-muted">{{aff}}<span ng-if="!$last">, </span></small>
@@ -16,6 +18,7 @@
 </div>
 
 <div class="container">
+	<hr ng-if="!game.bgUrl.length">
 	<div class="row text-center">
 		<div ng-class="{'col-xs-12 col-md-6': game.collaborators.length, 'col-xs-12': !game.collaborators.length}">
 			<div class="row">

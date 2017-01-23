@@ -27,7 +27,8 @@ angular.module('app', [
 	'app.home',
 	'app.models',
 	'app.resume',
-	'app.sites'
+	'app.sites',
+	'app.videos'
 ])
 
 .config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
