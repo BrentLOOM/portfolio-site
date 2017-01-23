@@ -36,8 +36,10 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					programming: [
 						'C#'
 					],
-					teamwork: false,
-					gameDesign: true
+					software: [
+						'Maya',
+						'Adobe Photoshop CS6'
+					]
 				},
 				collaborators: [
 					
@@ -47,7 +49,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				albumUrl: "",
-				bgUrl: "/images/seed-temp.JPG"
+				bgUrl: "/images/covers/seed-temp.JPG"
 			}
 		}
 	})
@@ -79,8 +81,10 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					programming: [
 						'C#'
 					],
-					teamwork: true,
-					gameDesign: true
+					software: [
+						'Photoshop CS6',
+						'Illustrator CS6'
+					]
 				},
 				collaborators: [
 					{
@@ -96,7 +100,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				albumUrl: "",
-				bgUrl: "/images/PA-bg.jpg"
+				bgUrl: "/images/covers/PA-bg.jpg"
 			}
 		}
 	})
@@ -129,8 +133,10 @@ angular.module('app.games', []).config(function ($stateProvider) {
 						'C++',
 						'Blueprints'
 					],
-					teamwork: true,
-					gameDesign: true
+					software: [
+						'Maya',
+						'Photoshop CS6'
+					]
 				},
 				collaborators: [
 					{
@@ -180,8 +186,9 @@ angular.module('app.games', []).config(function ($stateProvider) {
 						'HTML',
 						'CSS'
 					],
-					teamwork: true,
-					gameDesign: true
+					software: [
+						
+					]
 				},
 				collaborators: [
 					{

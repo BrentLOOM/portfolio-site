@@ -84,8 +84,12 @@ body {
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
+	margin-top: -50px;
     border-bottom: 0;
   }
+	.jumbotron .container {
+		margin-top: 50px;
+	}
 
 	.dev-credit {
 		padding-top: 5px;
@@ -121,3 +125,20 @@ body {
 	height:100%;
 	width: auto;
 }
+
+.navbar-fixed-top {
+	background: rgba(0,0,0,0.85);
+}
+
+.cover-text {
+	text-shadow: 1px 1px rgba(200, 200, 200, 0.9);
+}
+
+.cover-text-sm {
+	text-shadow: 1px 1px #DDD;
+}
+
+.cover-platform {
+	box-shadow: 1px 1px rgba(200, 200, 200, 0.9);
+}
+
