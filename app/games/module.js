@@ -49,7 +49,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				albumUrl: "",
-				bgUrl: "/images/covers/seed-temp.JPG"
+				bgUrl: "/images/covers/seed-temp.jpg"
 			}
 		}
 	})
