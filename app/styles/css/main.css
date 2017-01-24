@@ -142,3 +142,7 @@ body {
 	box-shadow: 1px 1px rgba(200, 200, 200, 0.9);
 }
 
+.game-list-row {
+	background-color: lightgrey;
+	padding-bottom: 30px;
+}
