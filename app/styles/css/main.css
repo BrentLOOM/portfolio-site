@@ -65,6 +65,11 @@ body {
 	padding-bottom: 60px;
 }
 
+.game-description {
+	font-size: 1.3em;
+	text-align: justify;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -104,6 +109,10 @@ body {
 	.content-ui-view {
 		padding-top: 20px;
 		padding-bottom: 60px;
+	}
+	
+	.game-description {
+		text-align: left;
 	}
 }
 
@@ -152,7 +161,5 @@ h1, h2, h3, h4, h5, h6, p, div, span, li {
 	font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
-.game-description {
-	font-size: 1.3em;
-}
+
 
