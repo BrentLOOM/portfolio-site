@@ -30,6 +30,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				roles: [
 					'Lead Designer',
 					'Lead Programmer',
+					'Lead Writer',
 					'Art Lead'
 				],
 				skills: {
@@ -48,6 +49,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
+				engineColor: "white",
 				albumUrl: "",
 				bgUrl: "/images/covers/seed-temp.jpg"
 			}
@@ -75,7 +77,8 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				],
 				roles: [
 					'Lead Designer',
-					'Lead Programmer'
+					'Lead Programmer',
+					'Lead Writer'
 				],
 				skills: {
 					programming: [
@@ -99,6 +102,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
+				engineColor: "black",
 				albumUrl: "",
 				bgUrl: "/images/covers/PA-bg.jpg"
 			}
@@ -126,6 +130,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				roles: [
 					'Lead Designer',
 					'Lead Programmer',
+					'Lead Writer',
 					'Art Lead'
 				],
 				skills: {
@@ -151,6 +156,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
+				engineColor: "black",
 				albumUrl: "",
 				bgUrl: ""
 			}
@@ -211,7 +217,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
-				descPath: "MessageCraft is a cool game.",
+				engineColor: "black",
 				albumUrl: "",
 				bgUrl: ""
 			}

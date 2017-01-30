@@ -30,19 +30,19 @@ angular.module('ngParallax').directive('ngParallax', [
             }
           };
 			
-		  var bump = 200;
+		  var bump = -270;
 
           var bgObj = elem[0];
               bgObj.style.backgroundRepeat = "inherit";
               bgObj.style.backgroundAttachment = "fixed";
-              bgObj.style.width = "100%";
+              bgObj.style.height = "100%";
               //bgObj.style.margin = "0 auto";
               bgObj.style.position = "relative";
 			  //bgObj.style.verticalAlign = "bottom";
               bgObj.style.background = "url(" + scope.pattern + ") no-repeat";
               bgObj.style.backgroundAttachment = 'fixed';
 			  bgObj.style.backgroundPositionX = '50%';
-			  bgObj.style.backgroundPositionY = bump + '%';
+			  bgObj.style.backgroundPositionY = bump + 'px';
 			
 		
           var isMobile = window.mobileAndTabletcheck();
@@ -56,7 +56,7 @@ angular.module('ngParallax').directive('ngParallax', [
                 speed = speed * 0.10;
               }
               if(speed === 0){
-                bgObj.style.backgroundPositionY = ' 0%';
+                bgObj.style.backgroundPositionY = bump + '%';
               }
               else{
                 bgObj.style.backgroundPositionY = (bump + speed) + '%';

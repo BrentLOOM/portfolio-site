@@ -11,12 +11,18 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 
 	$scope.game = $state.current.data.game;
 	
-	$scope.engineCredit = function(engine){
+	$scope.engineCredit = function(engine, color){
 		switch(engine){
 			case 'Unity':
-				return 'images/mwu-logo-rgb.png';
+				if(color === "white")
+					return 'images/mwu-logo-white-rgb.png';
+				else
+					return 'images/mwu-logo-rgb.png';
 			case 'Unreal Engine':
-				return 'images/Unreal_Engine_Horiz_Black.png';
+				if(color === "white")
+					return 'images/Unreal_Engine_Horiz_Black.png';
+				else
+					return 'images/Unreal_Engine_Horiz_Black.png';
 			case 'AngularJS':
 				return 'images/AngularJS-large.png';
 			default:
@@ -65,16 +71,6 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
   		'top': '0',
   		'left': '0',
 		'z-index': '-1'
-	};
-	
-	$scope.jumbotronStyle = {
-		'margin-bottom': '0px',
-		'height': '350px',
-		//'color': 'white',
-		//'text-shadow': 'black 0.3em 0.3em 0.3em',
-		'background': 'transparent'
-	};
-	
-	
+	};	
 
 });
