@@ -184,8 +184,114 @@ angular.module('app.resume', []).config(function ($stateProvider) {
 		}
 	});
 });
-angular.module('app.resume').controller('ResumeCtrl', function(){
+"use strict";
+
+angular.module('app.resume').controller('ResumeCtrl', function($scope){
+	$scope.progLanguages = [
+		{
+			level: "Fluent",
+			langs: [
+				'C#',
+				'HTML',
+				'JavaScript',
+				'CSS',
+				'C++'
+			]
+		},
+		{
+			level: "Proficient",
+			langs: [
+				'Java',
+				'C',
+				'PHP'
+			]
+		}
+	];
 	
+	
+	$scope.engineImagePaths = [
+		"images/unity-logo-rgb.png",
+		"images/Unreal_Engine_Horiz_Black.png"
+	];
+	
+	$scope.creativeSoftware = [
+		{
+			brand: "Adobe",
+			programs: [
+				{
+					name: "Photoshop CS6",
+					tags: [
+						"Photo-Editing",
+						"Texture Editing"
+					]
+				},
+				{
+					name: "Premiere Pro CS6",
+					tags: [
+						"Video Editing"				
+					]
+				},
+				{
+					name: "After Effects CS6",
+					tags: [
+						"Video Composition",
+						"Motion Graphics",
+						"VFX"
+					]
+				}
+			]
+			
+		},
+		{
+			brand: "Avid",
+			programs: [
+				{
+					name: "Pro Tools",
+					tags: [
+						"Audio Mixing",
+						"Audio Editing"
+					]
+				}
+			]
+			
+		},
+		{
+			brand: "Autodesk",
+			programs: [
+				{
+					name: "Maya",
+					tags: [
+						"Low-Poly Modeling",
+						"High-Poly Modeling",
+						"3D Animation"
+					]
+				}
+			]
+			
+		}
+	];
+	
+	$scope.spokenLangs = [
+		{
+			level: "Fluent",
+			langs: [
+				"English",
+				"Spanish"
+			]
+		},
+		{
+			level: "Proficient",
+			langs: [
+				
+			]
+		},
+		{
+			level: "Conversational",
+			langs: [
+				"French"
+			]
+		}
+	];
 });
 "use strict";
 
@@ -243,6 +349,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				roles: [
 					'Lead Designer',
 					'Lead Programmer',
+					'Lead Writer',
 					'Art Lead'
 				],
 				skills: {
@@ -261,6 +368,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
+				engineColor: "white",
 				albumUrl: "",
 				bgUrl: "/images/covers/seed-temp.jpg"
 			}
@@ -288,7 +396,8 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				],
 				roles: [
 					'Lead Designer',
-					'Lead Programmer'
+					'Lead Programmer',
+					'Lead Writer'
 				],
 				skills: {
 					programming: [
@@ -312,6 +421,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
+				engineColor: "black",
 				albumUrl: "",
 				bgUrl: "/images/covers/PA-bg.jpg"
 			}
@@ -339,6 +449,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 				roles: [
 					'Lead Designer',
 					'Lead Programmer',
+					'Lead Writer',
 					'Art Lead'
 				],
 				skills: {
@@ -364,6 +475,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
+				engineColor: "black",
 				albumUrl: "",
 				bgUrl: ""
 			}
@@ -424,7 +536,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'Digital Worlds Institute',
 					'University of Florida'
 				],
-				descPath: "MessageCraft is a cool game.",
+				engineColor: "black",
 				albumUrl: "",
 				bgUrl: ""
 			}
@@ -445,12 +557,18 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 
 	$scope.game = $state.current.data.game;
 	
-	$scope.engineCredit = function(engine){
+	$scope.engineCredit = function(engine, color){
 		switch(engine){
 			case 'Unity':
-				return 'images/mwu-logo-rgb.png';
+				if(color === "white")
+					return 'images/mwu-logo-white-rgb.png';
+				else
+					return 'images/mwu-logo-rgb.png';
 			case 'Unreal Engine':
-				return 'images/Unreal_Engine_Horiz_Black.png';
+				if(color === "white")
+					return 'images/Unreal_Engine_Horiz_Black.png';
+				else
+					return 'images/Unreal_Engine_Horiz_Black.png';
 			case 'AngularJS':
 				return 'images/AngularJS-large.png';
 			default:
@@ -499,17 +617,7 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
   		'top': '0',
   		'left': '0',
 		'z-index': '-1'
-	};
-	
-	$scope.jumbotronStyle = {
-		'margin-bottom': '0px',
-		'height': '350px',
-		//'color': 'white',
-		//'text-shadow': 'black 0.3em 0.3em 0.3em',
-		'background': 'transparent'
-	};
-	
-	
+	};	
 
 });
 'use strict';
@@ -544,19 +652,19 @@ angular.module('ngParallax').directive('ngParallax', [
             }
           };
 			
-		  var bump = 200;
+		  var bump = -270;
 
           var bgObj = elem[0];
               bgObj.style.backgroundRepeat = "inherit";
               bgObj.style.backgroundAttachment = "fixed";
-              bgObj.style.width = "100%";
+              bgObj.style.height = "100%";
               //bgObj.style.margin = "0 auto";
               bgObj.style.position = "relative";
 			  //bgObj.style.verticalAlign = "bottom";
               bgObj.style.background = "url(" + scope.pattern + ") no-repeat";
               bgObj.style.backgroundAttachment = 'fixed';
 			  bgObj.style.backgroundPositionX = '50%';
-			  bgObj.style.backgroundPositionY = bump + '%';
+			  bgObj.style.backgroundPositionY = bump + 'px';
 			
 		
           var isMobile = window.mobileAndTabletcheck();
@@ -570,7 +678,7 @@ angular.module('ngParallax').directive('ngParallax', [
                 speed = speed * 0.10;
               }
               if(speed === 0){
-                bgObj.style.backgroundPositionY = ' 0%';
+                bgObj.style.backgroundPositionY = bump + '%';
               }
               else{
                 bgObj.style.backgroundPositionY = (bump + speed) + '%';
