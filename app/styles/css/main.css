@@ -146,3 +146,13 @@ body {
 	background-color: lightgrey;
 	padding-bottom: 30px;
 }
+
+
+h1, h2, h3, h4, h5, h6, p, div, span, li {
+	font-family: "Raleway";
+}
+
+.game-description {
+	font-size: 1.3em;
+}
+
