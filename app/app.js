@@ -32,7 +32,7 @@ angular.module('app', [
 	'app.videos'
 ])
 
-.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
+.config(function ($stateProvider, $locationProvider, $urlRouterProvider, LightboxProvider) {
 
 	
     $stateProvider
@@ -54,4 +54,6 @@ angular.module('app', [
 	$locationProvider.hashPrefix('');
 	$urlRouterProvider.otherwise('/home');
 	//$locationProvider.html5Mode(true);
+	
+	LightboxProvider.templateUrl = '/games/views/lightbox.tpl.html';
 });

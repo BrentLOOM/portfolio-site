@@ -7,9 +7,15 @@
  * # MainCtrl
  * Controller of the app
  */
-angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
+angular.module('app.games').controller('GameCtrl', function ($scope, $state, imgurAlbumService, Lightbox) {
 
 	$scope.game = $state.current.data.game;
+	$scope.images = [];
+
+	if($scope.game.albumId.length)
+		imgurAlbumService.getAlbum($scope.game.albumId).then(function(response){
+			$scope.images = response;
+		});
 		
 	$scope.engineCredit = function(engine, color){
 		switch(engine){
@@ -88,5 +94,9 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
   		'left': '0',
 		'z-index': '-1'
 	};	
+	
+	$scope.openLightboxModal = function (index) {
+		Lightbox.openModal($scope.images, index);
+	};
 
 });

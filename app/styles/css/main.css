@@ -154,7 +154,8 @@ body {
 }
 
 .cover-text {
-	text-shadow: 1px 1px rgba(200, 200, 200, 0.9);
+	text-shadow: 2px 2px rgba(200, 200, 200, 0.9),
+				1px 1px rgba(200, 200, 200, 0.9);
 }
 
 .cover-text-sm {
@@ -184,4 +185,21 @@ h1, h2, h3, h4, h5, h6, p, div, span, li {
 
 body {
 /*	overflow-x: hidden;*/
+}
+
+.img-thumbnail {
+	max-width: 200px;
+}
+
+.lbThumbnail {
+	cursor: pointer;
+}
+
+.lightbox-image-container img {
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }

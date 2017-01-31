@@ -50,7 +50,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				engineColor: "white",
-				albumId: "",
+				albumId: '',
 				bgUrl: "/images/covers/seed-temp.jpg"
 			}
 		}
@@ -103,7 +103,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				engineColor: "black",
-				albumId: "",
+				albumId: 'BagIr',
 				bgUrl: "/images/covers/PA-bg.jpg"
 			}
 		}
@@ -157,7 +157,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				engineColor: "black",
-				albumId: "",
+				albumId: '',
 				bgUrl: ""
 			}
 		}
@@ -218,7 +218,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				engineColor: "black",
-				albumId: "",
+				albumId: '',
 				bgUrl: ""
 			}
 		}
@@ -263,7 +263,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				engineColor: "black",
-				albumId: "http://imgur.com/a/qcAJW",
+				albumId: 'qcAJW',
 				bgUrl: "/images/covers/PH-bg.jpg"
 			}
 		}

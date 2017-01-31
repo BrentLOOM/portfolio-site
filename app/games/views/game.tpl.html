@@ -3,7 +3,7 @@
 		<span>
 			<img class="engine-credit img-responsive center-block" ng-src="{{engineCredit(game.engine, game.engineColor)}}" alt="Made With {{game.engine}}"/><br/><br/>
 			<h1><strong class="cover-text">{{game.title}}</strong> <small class="cover-text-sm">({{game.year}})</small></h1>
-			<h4 ng-if="game.tagline.length"><em class="cover-text">"{{game.tagline}}"</em></h4>
+			<h4 ng-if="game.tagline.length"><em class="cover-text-sm">"{{game.tagline}}"</em></h4>
 			<br/>
 			<h3>
 				<span ng-repeat="platform in game.platforms"><span class="label cover-platform" ng-class="platformLabel(platform)" aria-label="{{platform}}">{{platform}} <i class="fa" aria-hidden="true" ng-class="platformIcon(platform)"></i></span> </span>
@@ -62,18 +62,29 @@
 </div>
 
 <div class="container">
-	<div class="row" ng-if="game.albumUrl.length">
-		<hr/>
-		<div class="col-xs-12">
-		</div>
-	</div>
-	
 	<div class="row">
 		<div class="col-xs-12">
 			<h2 class="text-center"><strong>Description</strong></h2>
 			<div class="game-description">
 				<div ng-include="'games/descriptions/' + game.title + '.html'"></div>
 			</div>
+		</div>
+	</div>
+	
+</div>
+
+<div class="container-fluid" ng-show="images.length">	
+	<div class="row">
+		<hr/>
+		<div class="col-xs-12">
+			<h2 class="text-center"><strong>Gallery</strong></h2>
+			<ul class="list-inline text-center">
+				<li ng-repeat="image in images" class="list-inline-item">
+					<a ng-click="openLightboxModal($index)" class="lbThumbnail">
+						<img ng-src="{{image.url}}" class="img-thumbnail img-responsive center-block">
+					</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 </div>
