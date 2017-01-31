@@ -20,6 +20,7 @@ angular.module('app', [
 	'ui.router',
 	'ui.bootstrap',
 	'ngParallax',
+	'bootstrapLightbox',
 
 	'app.about',
 	'app.animation',

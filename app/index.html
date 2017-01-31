@@ -10,12 +10,14 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/css/main.css">
 	<link rel="stylesheet" href="styles/css/font-awesome.min.css">
 	<link rel="stylesheet" href="styles/css/bootstrap-social.css">
+	<link rel="stylesheet" href="angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.css">
     <!-- endbuild -->
   	<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   </head>
@@ -58,6 +60,7 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -86,6 +89,8 @@
 	<script src="games/module.js"></script>
 	<script src="games/controllers/GameCtrl.js"></script>
 	<script src="games/directives/ngParallax.js"></script>
+	  
+	<script src="services/imgurAlbumService.js"></script>
 
 	<!-- endbuild -->
 </body>
