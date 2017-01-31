@@ -10,7 +10,7 @@
 angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 
 	$scope.game = $state.current.data.game;
-	
+		
 	$scope.engineCredit = function(engine, color){
 		switch(engine){
 			case 'Unity':
@@ -18,15 +18,19 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 					return 'images/mwu-logo-white-rgb.png';
 				else
 					return 'images/mwu-logo-rgb.png';
+				/* falls through */
 			case 'Unreal Engine':
 				if(color === "white")
 					return 'images/Unreal_Engine_Horiz_Black.png';
 				else
 					return 'images/Unreal_Engine_Horiz_Black.png';
+				/* falls through */
 			case 'AngularJS':
 				return 'images/AngularJS-large.png';
+				/* falls through */
 			case 'Processing':
 				return 'images/Processing.png';
+				/* falls through */
 			default:
 				return 'images/mwu-logo-rgb.png';
 		}	
@@ -37,13 +41,18 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 		switch(platform){
 			case 'Android':
 				return 'label-success';
+				/* falls through */
 			case 'OSX':
+				/* falls through */
 			case 'iOS':
 				return 'label-info';
+				/* falls through */
 			case 'PC':
 				return 'label-default';
+				/* falls through */
 			case 'Web':
 				return 'label-primary';
+				/* falls through */
 			default:
 				return 'label-danger';
 		}
@@ -53,13 +62,18 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 		switch(platform){
 			case 'Android':
 				return 'fa-android';
+				/* falls through */
 			case 'OSX':
+				/* falls through */
 			case 'iOS':
 				return 'fa-apple';
+				/* falls through */
 			case 'PC':
 				return 'fa-windows';
+				/* falls through */
 			case 'Web':
 				return 'fa-globe';
+				/* falls through */
 			default:
 				return '';
 		}
