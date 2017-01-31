@@ -32,7 +32,7 @@ angular.module('app', [
 	'app.videos'
 ])
 
-.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
+.config(function ($stateProvider, $locationProvider, $urlRouterProvider, LightboxProvider) {
 
 	
     $stateProvider
@@ -54,6 +54,8 @@ angular.module('app', [
 	$locationProvider.hashPrefix('');
 	$urlRouterProvider.otherwise('/home');
 	//$locationProvider.html5Mode(true);
+	
+	LightboxProvider.templateUrl = '/games/views/lightbox.tpl.html';
 });
 'use strict';
 
@@ -370,7 +372,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				engineColor: "white",
-				albumId: "",
+				albumId: '',
 				bgUrl: "/images/covers/seed-temp.jpg"
 			}
 		}
@@ -423,7 +425,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				engineColor: "black",
-				albumId: "",
+				albumId: 'BagIr',
 				bgUrl: "/images/covers/PA-bg.jpg"
 			}
 		}
@@ -477,7 +479,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				engineColor: "black",
-				albumId: "",
+				albumId: '',
 				bgUrl: ""
 			}
 		}
@@ -538,7 +540,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				engineColor: "black",
-				albumId: "",
+				albumId: '',
 				bgUrl: ""
 			}
 		}
@@ -583,7 +585,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				engineColor: "black",
-				albumId: "http://imgur.com/a/qcAJW",
+				albumId: 'qcAJW',
 				bgUrl: "/images/covers/PH-bg.jpg"
 			}
 		}
@@ -599,9 +601,15 @@ angular.module('app.games', []).config(function ($stateProvider) {
  * # MainCtrl
  * Controller of the app
  */
-angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
+angular.module('app.games').controller('GameCtrl', function ($scope, $state, imgurAlbumService, Lightbox) {
 
 	$scope.game = $state.current.data.game;
+	$scope.images = [];
+
+	if($scope.game.albumId.length)
+		imgurAlbumService.getAlbum($scope.game.albumId).then(function(response){
+			$scope.images = response;
+		});
 		
 	$scope.engineCredit = function(engine, color){
 		switch(engine){
@@ -680,6 +688,10 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
   		'left': '0',
 		'z-index': '-1'
 	};	
+	
+	$scope.openLightboxModal = function (index) {
+		Lightbox.openModal($scope.images, index);
+	};
 
 });
 'use strict';
@@ -769,9 +781,24 @@ angular.module('ngParallax').directive('ngParallax', [
 "use strict";
 
 angular.module('app').service('imgurAlbumService', function($http){
-	this.baseUrl = 'https://api.imgur.com/3/';
+	this.baseUrl = 'https://api.imgur.com/3/album/';
 	
-	this.getAlbum = function(){
-		
+	this.getAlbum = function(albumId){
+		return $http.get(this.baseUrl + albumId, {
+			headers: {
+				Authorization: 'Client-ID 3cabdd994ca49e6',
+        		Accept: 'application/json'
+			}
+		}).then(function(response){
+			return response.data.data.images.map(function(value, index){
+				return {
+					url: value.link,
+					title: value.title,
+					description: value.description
+				};
+			});
+		}, function(response){
+			console.log(response);
+		});
 	};
 });
