@@ -25,6 +25,8 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 					return 'images/Unreal_Engine_Horiz_Black.png';
 			case 'AngularJS':
 				return 'images/AngularJS-large.png';
+			case 'Processing':
+				return 'images/Processing.png';
 			default:
 				return 'images/mwu-logo-rgb.png';
 		}	

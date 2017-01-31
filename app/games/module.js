@@ -223,5 +223,50 @@ angular.module('app.games', []).config(function ($stateProvider) {
 			}
 		}
 	})
+	
+	.state('app.games.pixel-hopper', {
+		name: 'pixel-hopper',
+		url: '/pixel-hopper',
+		views: {
+			'content@': {
+				templateUrl: 'games/views/game.tpl.html',
+				controller: 'GameCtrl'
+			}
+		},
+		data: {
+			game: {
+				title: 'Pixel Hopper',
+				engine: 'Processing',
+				year: '2014',
+				tagline: "The resolution revolution is here.",
+				platforms: [
+					'PC'
+				],
+				roles: [
+					'Lead Designer',
+					'Lead Programmer',
+					'Lead Artist'
+				],
+				skills: {
+					programming: [
+						'Java',
+						'Processing'
+					],
+					software: [
+						'GIMP'
+					]
+				},
+				collaborators: [
+					
+				],
+				affiliations: [
+					'University of Florida'
+				],
+				engineColor: "black",
+				albumUrl: "",
+				bgUrl: "/images/covers/PH-bg.jpg"
+			}
+		}
+	})
 	;
 });
