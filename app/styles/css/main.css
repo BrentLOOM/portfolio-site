@@ -70,6 +70,14 @@ body {
 	text-align: justify;
 }
 
+.navbar-collapse .in {
+	overflow-y: visible;
+}
+
+.navbar-fixed-top {
+	background: rgba(0,0,0,0.95);
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -114,6 +122,15 @@ body {
 	.game-description {
 		text-align: left;
 	}
+	
+	.navbar-fixed-top .container-fluid {
+		margin-left: 200px;
+		margin-right: 200px;
+	}
+	
+	.navbar-fixed-top {
+		background: rgba(0,0,0,0.85);
+	}
 }
 
 .engine-credit {
@@ -128,15 +145,12 @@ body {
 }
 .navbar-brand {
 	display: inline-block;
+	font-weight: 900;
 }
 
 .navbar-brand span>img {
 	height:100%;
 	width: auto;
-}
-
-.navbar-fixed-top {
-	background: rgba(0,0,0,0.85);
 }
 
 .cover-text {
@@ -169,5 +183,5 @@ h1, h2, h3, h4, h5, h6, p, div, span, li {
 }
 
 body {
-	overflow-x: hidden;
+/*	overflow-x: hidden;*/
 }
