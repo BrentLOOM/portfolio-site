@@ -4,7 +4,7 @@
   <!-- navigation -->
   <div class="lightbox-nav">
     <!-- close button -->
-    <button class="close" aria-hidden="true" ng-click="$dismiss()">×</button>
+    <button class="close center-block" aria-hidden="true" ng-click="$dismiss()"><i class="fa fa-times"></i></button>
 
     <!--<div class="btn-group" ng-if="Lightbox.images.length > 1">
       <a class="btn btn-xs btn-default" ng-click="Lightbox.prevImage()">
@@ -47,17 +47,19 @@
         <a ng-href="{{Lightbox.imageUrl}}">Watch video</a>
       </embed-video>
     </div>
-  </div>
-	
-	<div  ng-if="Lightbox.images.length > 1">
+	  
+	  <div  ng-if="Lightbox.images.length > 1">
 		<a class="left carousel-control" ng-click="Lightbox.prevImage()" role="button">
 			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 			<span class="sr-only">Previous</span>
 		</a>
-		<a class="right carousel-control" ng-click="Lightbox.prevImage()" role="button">
+		<a class="right carousel-control" ng-click="Lightbox.nextImage()" role="button">
 			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
+  </div>
+	
+	
 	
 </div>
