@@ -1,7 +1,7 @@
 <div class="jumbotron" ng-parallax pattern="game.bgUrl" speed="0">
 	<div class="container">
 		<span>
-			<img class="engine-credit " ng-src="{{engineCredit(game.engine, game.engineColor)}}" alt="Made With {{game.engine}}"/><br/><br/>
+			<img class="engine-credit img-responsive center-block" ng-src="{{engineCredit(game.engine, game.engineColor)}}" alt="Made With {{game.engine}}"/><br/><br/>
 			<h1><strong class="cover-text">{{game.title}}</strong> <small class="cover-text-sm">({{game.year}})</small></h1>
 			<h4 ng-if="game.tagline.length"><em class="cover-text">"{{game.tagline}}"</em></h4>
 			<br/>

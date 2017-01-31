@@ -1,6 +1,6 @@
 <div class="header">
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
 			<div class="navbar-header">
 
 				<button type="button" class="navbar-toggle" ng-click="navbarCollapsed = !navbarCollapsed">
@@ -10,7 +10,7 @@
 					<span class="icon-bar"></span>
 				</button>
 
-				<a class="navbar-brand" ui-sref="app.home"><strong>Brent Lopez</strong></a>
+				<a class="navbar-brand" ui-sref="app.home">Brent Lopez</a>
 			</div>
 
 			<div class="navbar-collapse" uib-collapse="navbarCollapsed">
@@ -20,30 +20,33 @@
 						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li class="dropdown-header">Unity</li>
-							<li ui-sref-active="active"><a ui-sref="app.games.seed">Seed</a></li>
-							<li ui-sref-active="active"><a ui-sref="app.games.pacific-armada">Pacific Armada</a></li>
+							<li ui-sref-active="active" ng-click="navbarCollapsed = true"><a ui-sref="app.games.seed">Seed</a></li>
+							<li ui-sref-active="active" ng-click="navbarCollapsed = true"><a ui-sref="app.games.pacific-armada">Pacific Armada</a></li>
 							<li role="separator" class="divider"></li>
 							<li class="dropdown-header">Unreal Engine</li>
-							<li ui-sref-active="active"><a ui-sref="app.games.wonderland">Wonderland</a></li>
+							<li ui-sref-active="active" ng-click="navbarCollapsed = true"><a ui-sref="app.games.wonderland">Wonderland</a></li>
 							<li role="separator" class="divider"></li>
 							<li class="dropdown-header">Web</li>
-							<li ui-sref-active="active"><a ui-sref="app.games.messagecraft">MessageCraft</a></li>
+							<li ui-sref-active="active" ng-click="navbarCollapsed = true"><a ui-sref="app.games.messagecraft">MessageCraft</a></li>
+							<li role="separator" class="divider"></li>
+							<li class="dropdown-header">Processing</li>
+							<li ui-sref-active="app.games.pixel-hopper" ng-click="navbarCollapsed = true"><a ui-sref="app.games.pixel-hopper">Pixel Hopper</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Video<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li ui-sref-active="active"><a ui-sref="app.videos">Videos</a></li>
+							<li ui-sref-active="active"  ng-click="navbarCollapsed = true"><a ui-sref="app.videos">Videos</a></li>
 						</ul>
 					</li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li ui-sref-active="active"><a ui-sref="app.about">About Me</a></li>
-					<li ui-sref-active="active"><a ui-sref="app.resume">Resume</a></li>
+					<li ui-sref-active="active"  ng-click="navbarCollapsed = true"><a ui-sref="app.about">About Me</a></li>
+					<li ui-sref-active="active"  ng-click="navbarCollapsed = true"><a ui-sref="app.resume">Resume</a></li>
 					
 				</ul>
 			</div>
 		</div>
-	</div>
+	</nav>
 </div>

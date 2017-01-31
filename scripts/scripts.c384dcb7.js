@@ -20,6 +20,7 @@ angular.module('app', [
 	'ui.router',
 	'ui.bootstrap',
 	'ngParallax',
+	'bootstrapLightbox',
 
 	'app.about',
 	'app.animation',
@@ -369,7 +370,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				engineColor: "white",
-				albumUrl: "",
+				albumId: "",
 				bgUrl: "/images/covers/seed-temp.jpg"
 			}
 		}
@@ -422,7 +423,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				engineColor: "black",
-				albumUrl: "",
+				albumId: "",
 				bgUrl: "/images/covers/PA-bg.jpg"
 			}
 		}
@@ -476,7 +477,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				engineColor: "black",
-				albumUrl: "",
+				albumId: "",
 				bgUrl: ""
 			}
 		}
@@ -537,8 +538,53 @@ angular.module('app.games', []).config(function ($stateProvider) {
 					'University of Florida'
 				],
 				engineColor: "black",
-				albumUrl: "",
+				albumId: "",
 				bgUrl: ""
+			}
+		}
+	})
+	
+	.state('app.games.pixel-hopper', {
+		name: 'pixel-hopper',
+		url: '/pixel-hopper',
+		views: {
+			'content@': {
+				templateUrl: 'games/views/game.tpl.html',
+				controller: 'GameCtrl'
+			}
+		},
+		data: {
+			game: {
+				title: 'Pixel Hopper',
+				engine: 'Processing',
+				year: '2014',
+				tagline: "The resolution revolution is here.",
+				platforms: [
+					'PC'
+				],
+				roles: [
+					'Lead Designer',
+					'Lead Programmer',
+					'Lead Artist'
+				],
+				skills: {
+					programming: [
+						'Java',
+						'Processing'
+					],
+					software: [
+						'GIMP'
+					]
+				},
+				collaborators: [
+					
+				],
+				affiliations: [
+					'University of Florida'
+				],
+				engineColor: "black",
+				albumId: "http://imgur.com/a/qcAJW",
+				bgUrl: "/images/covers/PH-bg.jpg"
 			}
 		}
 	})
@@ -556,7 +602,7 @@ angular.module('app.games', []).config(function ($stateProvider) {
 angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 
 	$scope.game = $state.current.data.game;
-	
+		
 	$scope.engineCredit = function(engine, color){
 		switch(engine){
 			case 'Unity':
@@ -564,13 +610,19 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 					return 'images/mwu-logo-white-rgb.png';
 				else
 					return 'images/mwu-logo-rgb.png';
+				/* falls through */
 			case 'Unreal Engine':
 				if(color === "white")
 					return 'images/Unreal_Engine_Horiz_Black.png';
 				else
 					return 'images/Unreal_Engine_Horiz_Black.png';
+				/* falls through */
 			case 'AngularJS':
 				return 'images/AngularJS-large.png';
+				/* falls through */
+			case 'Processing':
+				return 'images/Processing.png';
+				/* falls through */
 			default:
 				return 'images/mwu-logo-rgb.png';
 		}	
@@ -581,13 +633,18 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 		switch(platform){
 			case 'Android':
 				return 'label-success';
+				/* falls through */
 			case 'OSX':
+				/* falls through */
 			case 'iOS':
 				return 'label-info';
+				/* falls through */
 			case 'PC':
 				return 'label-default';
+				/* falls through */
 			case 'Web':
 				return 'label-primary';
+				/* falls through */
 			default:
 				return 'label-danger';
 		}
@@ -597,13 +654,18 @@ angular.module('app.games').controller('GameCtrl', function ($scope, $state) {
 		switch(platform){
 			case 'Android':
 				return 'fa-android';
+				/* falls through */
 			case 'OSX':
+				/* falls through */
 			case 'iOS':
 				return 'fa-apple';
+				/* falls through */
 			case 'PC':
 				return 'fa-windows';
+				/* falls through */
 			case 'Web':
 				return 'fa-globe';
+				/* falls through */
 			default:
 				return '';
 		}
@@ -703,3 +765,13 @@ angular.module('ngParallax').directive('ngParallax', [
     };
   }
 ]);
+
+"use strict";
+
+angular.module('app').service('imgurAlbumService', function($http){
+	this.baseUrl = 'https://api.imgur.com/3/';
+	
+	this.getAlbum = function(){
+		
+	};
+});
